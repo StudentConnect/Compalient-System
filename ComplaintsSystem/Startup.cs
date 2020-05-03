@@ -16,6 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+
 
 namespace ComplaintsSystem
 {
@@ -31,11 +33,13 @@ namespace ComplaintsSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Browser security prevents a web page from making requests to a different domain
             services.AddCors();
             services.AddControllers();
 
-            
+            //getting secret key from json
             var key = Encoding.ASCII.GetBytes(Configuration["SecretKey"]);
+            //check request authentication for valid jwt token
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -59,6 +63,15 @@ namespace ComplaintsSystem
             services.AddScoped<IComplaintService, ComplaintService>();
             services.AddDbContext<CMSContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("CMSContextString")));
+
+            //use to api documentations
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Complaint System", Version = "v1" });
+            });
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,7 +83,15 @@ namespace ComplaintsSystem
             }
 
             app.UseHttpsRedirection();
+            app.UseSwagger();
 
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Complaint System");
+                c.RoutePrefix = string.Empty;
+            });
             app.UseRouting();
 
             // global cors policy
