@@ -1,0 +1,168 @@
+{
+	"id": "0a2f335c-2179-c780-91ce-f0140f3e7ede",
+	"name": "ComplaintSystem",
+	"description": "",
+	"order": [
+		"fc1ac11a-f6df-159a-b94f-32d6f328202a",
+		"d65873b0-e4ec-963f-71a3-ed0289d2e350",
+		"dd6ace6c-1aad-c1d8-6e76-116e49d101f0"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1588510056851,
+	"owner": "5063444",
+	"public": false,
+	"requests": [
+		{
+			"id": "d65873b0-e4ec-963f-71a3-ed0289d2e350",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNoYWhpZC5hbGlAb3V0bG9vay5jb20iLCJuYmYiOjE1ODg1MTAyNTQsImV4cCI6MTU4OTExNTA1NCwiaWF0IjoxNTg4NTEwMjU0fQ.znYctt1J_QH0b7O3HuEekQKYkD0iI_-DYVBc4G0sxrE\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNoYWhpZC5hbGlAb3V0bG9vay5jb20iLCJuYmYiOjE1ODg1MTAyNTQsImV4cCI6MTU4OTExNTA1NCwiaWF0IjoxNTg4NTEwMjU0fQ.znYctt1J_QH0b7O3HuEekQKYkD0iI_-DYVBc4G0sxrE",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/api/Complaint/save?oauth_consumer_key&oauth_token&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1588510935&oauth_nonce=2mywpP&oauth_version=1.0&oauth_signature=VL5QDtQPw9hkAdCP2xSKZC0glx8=",
+			"queryParams": [
+				{
+					"key": "oauth_consumer_key",
+					"value": "",
+					"equals": false,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "oauth_token",
+					"value": "",
+					"equals": false,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature_method",
+					"value": "HMAC-SHA1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "oauth_timestamp",
+					"value": "1588510935",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "oauth_nonce",
+					"value": "2mywpP",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "oauth_version",
+					"value": "1.0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature",
+					"value": "VL5QDtQPw9hkAdCP2xSKZC0glx8=",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1588524593719,
+			"name": "Save",
+			"description": "",
+			"collectionId": "0a2f335c-2179-c780-91ce-f0140f3e7ede",
+			"responses": [],
+			"rawModeData": "{\n\t\"Subject\": \"Internet is not working\",\n\t\"Department\": \"Support\",\n\t\"Description\": \"bala bala bala\",\n\t\"UserId\": 1\n}\n"
+		},
+		{
+			"id": "dd6ace6c-1aad-c1d8-6e76-116e49d101f0",
+			"headers": "Content-Type: application/x-www-form-urlencoded\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNoYWhpZC5hbGlAb3V0bG9vay5jb20iLCJuYmYiOjE1ODg1MTAyNTQsImV4cCI6MTU4OTExNTA1NCwiaWF0IjoxNTg4NTEwMjU0fQ.znYctt1J_QH0b7O3HuEekQKYkD0iI_-DYVBc4G0sxrE\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNoYWhpZC5hbGlAb3V0bG9vay5jb20iLCJuYmYiOjE1ODg1MTAyNTQsImV4cCI6MTU4OTExNTA1NCwiaWF0IjoxNTg4NTEwMjU0fQ.znYctt1J_QH0b7O3HuEekQKYkD0iI_-DYVBc4G0sxrE",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/api/Complaint/get",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1588524591130,
+			"name": "GetAll",
+			"description": "",
+			"collectionId": "0a2f335c-2179-c780-91ce-f0140f3e7ede",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "fc1ac11a-f6df-159a-b94f-32d6f328202a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8888/api/Complaint/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1588524595659,
+			"name": "Login",
+			"description": "",
+			"collectionId": "0a2f335c-2179-c780-91ce-f0140f3e7ede",
+			"responses": [],
+			"rawModeData": "{\n\t\"Username\": \"shahid.ali@outlook.com\",\n\t\"Password\": \"12345\"\n}\n"
+		}
+	]
+}
